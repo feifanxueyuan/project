@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="w">
+			
+
+			<div class="enterprise-prev left">
+				<
+			</div>
+		<div class="enterprise-pic left">
+		<ul>
+			<li><img src="images/enterprisepic1.jpg"/></li>
+			<li><img src="images/enterprisepic2.jpg"/></li>
+			<li><img src="images/enterprisepic3.jpg"/></li>
+			<li><img src="images/enterprisepic4.jpg"/></li>
+			<li><img src="images/enterprisepic5.jpg"/></li>
+			<li><img src="images/enterprisepic11.jpg"/></li>
+			<li><img src="images/enterprisepic7.jpg"/></li>
+			<li><img src="images/enterprisepic8.jpg"/></li>
+			<li><img src="images/enterprisepic9.jpg"/></li>
+			<li><img src="images/enterprisepic10.jpg"/></li>
+			<li><img src="images/enterprisepic11.jpg"/></li>
+			<li><img src="images/enterprisepic12.jpg"/></li>
+		</ul>
+	</div>
+	<div class="enterprise-next left">
+				>
+			</div>
+		</div>
+			
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var ul=$(".enterprise-pic ul");
+				var count=$(".enterprise-pic li").length;
+				var imageWidth=$(".enterprise-pic img").width();
+				var index = 0;
+				ul.width(count*imageWidth+(80+"px"));
+//				var t=setInterval(function(){
+//					index = (index+1)%count;
+//				},1000);
+//				ul.animate({
+//					left:(count)*imageWidth*-1+"px"
+//				},500,function(){ul.css("left",-1*(imageWidth+25)+"px");});
+			});
+		</script>
+	</body>
+</html>

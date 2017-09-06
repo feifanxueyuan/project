@@ -1,0 +1,60 @@
+<!--<div class="side-ad">
+			<img src="images/side.jpg">
+		</div>-->
+		
+		<div class="top">
+			<div class="w">
+			<ul class="left">
+				<li><a href="">首页 <span class="row"></span></a></li>
+				<li><a href="">学院介绍<span class="row"></span></a>
+					<ul class="sub-nav">
+						<li><a href="#">学院介绍</a></li>
+						<li><a href="#">学院介绍</a></li>
+						<li><a href="#">学院介绍</a></li>
+						<li><a href="#">学院介绍</a></li>
+						<li><a href="#">学院介绍</a></li>
+						<li><a href="#">学院介绍</a></li>
+						<li><a href="#">学院介绍</a></li>
+					</ul>
+				</li>
+				<li><a href="">课程导航<span class="row"></span></a></li>
+				<li><a href="">师资力量<span class="row"></span></a></li>
+				<li><a href="">学员作品<span class="row"></span></a></li>
+				<li><a href="">学历考证<span class="row"></span></a></li>
+				<li><a href="">就业信息<span class="row"></span></a></li>
+				<li><a href="">学习资讯<span class="row"></span></a></li>
+				<li><a href="">入学须知<span class="row"></span></a></li>
+			</ul>
+			
+			<div class="wechat right" >
+				<img src="images/wx.png"/>
+				<div class="wxpic"></div>
+			</div>
+			
+			</div>
+		</div>
+
+
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+			//导航栏效果
+			$(".top ul li").hover(function(){
+				$(this).children("ul").slideDown(200);
+				$(this).addClass("active");
+			},function(){
+				$(this).children("ul").slideUp(200);
+				$(this).removeClass("active");
+				
+			});
+      var wechat=document.getElementsByClassName("wechat")[0];
+      var wxpic=document.getElementsByClassName("wxpic")[0];
+			wechat.onmouseenter=function(){
+				wxpic.style.display = "block";
+			}
+			wechat.onmouseleave=function(){
+				wxpic.style.display = "none";
+			}	
+			});
+				
+</script>

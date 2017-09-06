@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			.box{
+				width: 1200px;
+				height: 350px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.box ul{
+				position: absolute;
+				top: 0;
+				left: 0;
+				list-style: none;
+			}
+			.box ul li{
+				width: 1200px;
+				height: 350px;
+				float: left;
+			}
+			.box ul li img{
+				width: 1200px;
+				height: 350px;
+			}
+			
+			.points{
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+			}
+			.points span{
+				display: block;
+				width: 16px;
+				height: 16px;
+				float: left;
+				margin:4px;
+				border-radius: 50%;
+				background-color: orange;
+			}
+			
+			.points span.active{
+				background-color: orangered;
+			}
+			.popular-courses-pos{
+				width: 200px;
+				height: 30px;
+				background: rgba(0,0,0,0.7);
+				position: absolute;
+				bottom: 0px;
+				color: #FFFFFF;
+				line-height: 30px;
+				text-align: left;
+				text-indent: 1em;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<!--<div class="box">
+			<ul>
+				<li><img src="images/banner1.jpg"></li>
+				<li><img src="images/banner2.jpg"></li>
+				<li><img src="images/banner3.jpg"></li>
+				<li><img src="images/banner4.jpg"></li>
+				<li><img src="images/banner5.jpg"></li>
+				<li><img src="images/banner6.jpg"></li>
+				<li><img src="images/banner7.jpg"></li>
+				<li><img src="images/banner8.jpg"></li>
+				<li><img src="images/banner9.jpg"></li>
+				<li><img src="images/banner10.jpg"></li>
+			</ul>
+			
+			<div class="points"></div>
+			
+		
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var ul = $(".box ul");
+				var count = $(".box li").length;//图片的数量
+				var imageWidth = $(".box").width();// 图片宽度
+				var index = 0;//图片轮播索引
+				var  points = $(".points");
+				
+				for(var i=0;i<count;i++){
+					points.append("<span></span>");
+				}
+				
+				points.css("margin-left",-12*count+"px").children("span").eq(0).addClass("active");				
+				
+				var first = $(".box ul li:first-child").clone();// 克隆第一张图
+				var last  = $(".box ul li:last-child").clone();// 克隆最后一张图
+				ul.append(first);
+				last.insertBefore($(".box ul li:first-child"));
+				// 设置 ul宽度
+				ul.width((count+2)*imageWidth);
+				
+				var t = setInterval(function(){
+					index = (index+1)%count;
+					imageSwitch(index);
+				},1000);
+				
+				
+				$(".box").hover(function(){
+					clearInterval(t);
+				},function(){
+					t = setInterval(function(){
+						index = (index+1)%count;
+						imageSwitch(index);
+					},1000);
+				});
+				
+				// 点上添加悬停事件，进行图片的切换
+				points.children("span").hover(function(){
+					index = $(this).index();
+					imageSwitch(index);
+				});
+				
+				
+				
+				// 图片切换处理函数
+				function imageSwitch(i){
+					// 停掉没有执行完成的动画
+					ul.stop(true,true);
+					// 下面点的状态切换
+					points.children("span").removeClass("active").eq(i).addClass("active");	
+					
+					if((i == 0)&&(parseInt(ul.css("left"))<(imageWidth*-2))){
+						// 针对第一张做特殊处理
+						ul.animate({
+							left:(count+1)*imageWidth*-1+"px"
+						},500,function(){
+							ul.css("left",-1*imageWidth+"px");
+						});
+					}else if((i==(count-1))&&(parseInt(ul.css("left"))>(imageWidth*-2))){
+						// 针对最后一张做特殊处理
+						ul.animate({
+							left:'0px'
+						},500,function(){
+							ul.css("left",-1*count*imageWidth+"px");
+						});
+						
+					}else{
+						ul.animate({
+							left:(i+1)*imageWidth*-1+"px"
+						},500);
+					}
+				}
+				
+			});
+			
+			
+			
+			
+			
+		</script>-->
+		<!--<div class="wechat right" onmouseenter="enterDemo();" onmouseleave="leaveDemo()">
+				<img src="images/wx.png"/>
+				<div class="qrcode"></div>
+			</div>
+			
+			<script type="text/javascript">
+				var qrcode=document.getElementsByClassName("qrcode")[0];
+				function enterDemo(){
+				qrcode.style.display = "block";
+			}
+				function leaveDemo(){
+				qrcode.style.display = "none";
+			}
+			
+			</script>-->
+			<!---->
+			<!--<div class="popular-courses">
+				<span >
+					热门课程
+				</span>
+				<ul>
+					<li><a href=""><img src="images/pc1.jpg"/></a>
+					<div class="popular-courses-pos">UI交互设计</div>
+					</li>
+					<li><a href=""><img src="images/pc2.jpg"/></a>
+					<div class="popular-courses-pos">淘宝美工设计</div>
+					</li>
+					<li><a href=""><img src="images/pc3.jpg"/></a>
+					<div class="popular-courses-pos">网络教育学历</div>
+					</li>
+				</ul>
+			</div>-->
+			<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+			<!--<script type="text/javascript">
+				$(document).ready(function(){
+					$(".popular-courses li").hover(function(){
+					$(".popular-courses-pos").animate({
+						width:"200px",
+						height:"70px",
+					},200,function(){}).innerHTML="zhu";
+				},function(){
+					$(".popular-courses-pos").animate({
+						width:"200px",
+						height:"30px",
+					},200,function(){});
+				});
+				});
+			</script>-->
+				<ul class="classlist">
+			<li class="classlist-mar">
+				<div class="classimg-box">
+					<img src="images/classpic1.jpg"/>
+				</div>
+				<p><a href="">平面设计全科班(白天班)</a></p>
+				<p>优惠价：3800元<button>查看></button></p>
+			</li >
+			<li class="classlist-mar">
+				<div class="classimg-box">
+					<img src="images/classpic1.jpg"/>
+				</div>
+				<p><a href="">平面设计全科班(白天班)</a></p>
+				<p>优惠价：3800元<button>查看></button></p>
+			</li>
+			<li class="classlist-mar">
+				<div class="classimg-box">
+					<img src="images/classpic1.jpg"/>
+				</div>
+				<p><a href="">平面设计全科班(白天班)</a></p>
+				<p>优惠价：3800元<button>查看></button></p>
+			</li>
+			<li class="classlist-linone">
+				<div class="classimg-box">
+					<img src="images/classpic1.jpg"/>
+				</div>
+				<p><a href="">平面设计全科班(白天班)</a></p>
+				<p>优惠价：3800元<button>查看></button></p>
+			</li>
+		</ul>
+			<script type="text/javascript">
+				$(".classimg-box").hover(function(){
+					$(".classlist li img").animate({
+						width:"540px",
+						height:"360px",
+					},1000,function(){});
+				},function(){
+					$(".classlist li img").animate({
+						width:"270px",
+						height:"180px",
+					},1000,function(){});
+				});
+			</script>
+	</body>
+</html>

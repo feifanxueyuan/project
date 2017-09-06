@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="textscrolls">
+		<div class="textscrollsl">
+			<img src="images/bm.jpg"/>今日报名:
+		</div>
+		<div class="textscrollsr">
+			<ul>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+				<li><a href="#">徐汇校区   王**  170****5102</a></li>
+				<li><a href="#">虹口校区   张**139****9878</a></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script type="text/javascript">
+		var list = $(".textscrollsr ul li");
+			var ul = $(".textscrollsr ul");
+			
+			ul.width(list.length*260);
+			
+			
+			ul.animate({
+				left:-1*ul.width()+"px",
+			},50000,"linear",function(){
+				ul.css("left","1000px");
+			});
+			var t=setInterval(function(){
+				ul.animate({
+				left:-1*ul.width()+"px",
+			},50000,"linear",function(){
+				ul.css("left","1000px");
+			});
+			},50000);
+			$(".textscrollsr").hover(function() {
+				clearInterval(t);
+			}, function() {
+				 t=setInterval(function(){
+				ul.animate({
+				left:-1*ul.width()+"px",
+			},50000,"linear",function(){
+				ul.css("left","1000px");
+			});
+			},50000);
+			});
+	</script>
+	</body>
+</html>
